@@ -7,5 +7,5 @@ function getRepositories(){
   
   req.addEventListener('load', showRepositories);
   
-  req.open('GET' /repos/:owner/:repo)
+  const url = `https://
 }
