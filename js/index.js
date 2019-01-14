@@ -42,5 +42,14 @@ function getCommits(el){
   
   req.addEventListener('load', displayCommits);
   
-  const url = req.open('GET', 'https://api.github.com/users/${username}/repos')
+  const url = `https://api.github.com/users/${username}/commits`;
+  
+  req.open('GET', url);
+  req.send();
+}
+
+function displayCommits(){
+  const commits = JSON.parse(this.responseText);
+  
+  const commitsList = 
 }
