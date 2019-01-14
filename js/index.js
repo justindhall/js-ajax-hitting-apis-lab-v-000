@@ -21,11 +21,26 @@ function getRepositories(){
 }
 
 function displayRepositories(){
+  //parse JSON file
   var repos = JSON.parse(this.responseText);
   
+  //print readable JSON
   console.log(repos);
   
+  //map list of repositories to const  
   const repoList = `<ul>${repos.map(r => '<li>' + r.name + ' - <a href="#" data-repo=" ' + r.name + '"onclick="getCommits(this)">Get Commits</a></li>').join('')}</ul>`
   
+  //set element in index.html to stored repositories const
   document.getElementById('repositories').innerHTML = repoList;
+}
+
+function getCommits(el){
+  
+  //get username value
+  const name = document.getElementById("username").value;
+  const req = new XMLHttpRequest();
+  
+  req.addEventListener('load', displayCommits);
+  
+  const url = req.open('GET', 'https://api.github.com/users/${username}/repos')
 }
