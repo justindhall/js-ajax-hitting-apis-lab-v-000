@@ -2,7 +2,7 @@
 
 function getRepositories(){
   //get username value
-  const username =
+  const username = document.getElementById("username").value
   const req = new XMLHttpRequest();
   
   req.addEventListener('load', showRepositories);
