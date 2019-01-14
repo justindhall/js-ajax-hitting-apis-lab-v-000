@@ -8,7 +8,7 @@ function getRepositories(){
   const req = new XMLHttpRequest();
   
   //listener for shower to act on
-  req.addEventListener('load', showRepositories);
+  req.addEventListener('load', displayRepositories);
   
   //abstracted link to url
   const url = `https://api.github.com/users/${username}/repos`
@@ -20,7 +20,7 @@ function getRepositories(){
   req.send()
 }
 
-function showRepositories(){
+function displayRepositories(){
   var repos = JSON.parse(this.responseText);
   
   console.log(repos);
