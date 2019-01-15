@@ -75,5 +75,7 @@ function getBranches(el) {
 }
 
 function displayBranches(){
+  const branches = JSON.parse(this.responseText);
   
+  const branchesList = `
 }
