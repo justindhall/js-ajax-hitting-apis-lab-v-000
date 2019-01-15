@@ -27,7 +27,14 @@ function displayRepositories(){
   console.log(repos);
   
   //map list of repositories to const  
-  const repoList = `<ul>${repos.map(r => '<li>' + r.name + ' - <a href="#" data-repo=" ' + r.name + '"onclick="getCommits(this)">Get Commits</a></li>').join('')}</ul>`
+  const repoList = `<ul>${repos.map(r => "<li>" +
+        `<a href="https://github.com/${r.full_name}">${r.full_name}</a>` +
+        ' - <a href="#" data-repo="' +
+        r.name +
+        '" onclick="getBranches(this)">Get branches</a>' +
+        ' - <a href="#" data-repo="' +
+        r.name +
+        '" onclick="getCommits(this)">Get Commits</a></li>').join('')}</ul>`
   
   //set element in index.html to stored repositories const
   document.getElementById('repositories').innerHTML = repoList;
