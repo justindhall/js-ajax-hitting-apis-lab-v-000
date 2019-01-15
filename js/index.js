@@ -1,6 +1,8 @@
 // your code here
 const username = document.getElementById("username").value
 
+const url = `https://api.github.com/users/${username}`
+
 function getRepositories(){
   
   //xmlRequest
