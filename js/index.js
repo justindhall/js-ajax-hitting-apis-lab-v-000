@@ -1,8 +1,7 @@
 // your code here
+const username = document.getElementById("username").value
 
 function getRepositories(){
-  //get username value
-  const username = document.getElementById("username").value
   
   //xmlRequest
   const req = new XMLHttpRequest();
