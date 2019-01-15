@@ -49,7 +49,7 @@ function getCommits(el){
 function displayCommits(){
   const commits = JSON.parse(this.responseText);
   
-  const commitsList = `<ul>${commits.map(commit => '<li><strong>' + commit.commit.author.name + '</strong> - ' + commit.commit.message + '</li>').join('')}</ul>`;
+  const commitsList = `<ul>${commits.map(commit => '<li><strong>' + commit.commit.author.name + '</strong> - ' + commit.commit.message + " - " + commit.author.login + '</li>').join('')}</ul>`;
   
   document.getElementById('details').innerHTML = commitsList;
 }
