@@ -43,7 +43,7 @@ function getCommits(el){
   
   const urc = url + '/commits';
   
-  req.open('GET', url);
+  req.open('GET', urc);
   req.send();
 }
 
