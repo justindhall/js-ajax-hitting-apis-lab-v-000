@@ -65,3 +65,7 @@ function getBranches(el) {
   req.open('GET', url);
   req.send();
 }
+
+function displayBranches(){
+  
+}
