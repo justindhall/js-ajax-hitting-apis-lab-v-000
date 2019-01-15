@@ -1,7 +1,5 @@
 // your code here
-const username = document.getElementById("username").value
-
-const url = `https://api.github.com/users/${username}`
+const username = document.getElementById("username").value;
 
 function getRepositories(){
   
@@ -12,10 +10,10 @@ function getRepositories(){
   req.addEventListener('load', displayRepositories);
   
   //abstracted link to url
-  const urr = url + '/repos'
+  const url = `https://api.github.com/users/${username}/repos`;
   
   //open with abstracted url
-  req.open('GET', urr)
+  req.open('GET', url)
   
   //send request 
   req.send()
@@ -41,9 +39,9 @@ function getCommits(el){
   
   req.addEventListener('load', displayCommits);
   
-  const urc = url + '/commits';
+  const url = 'https://api.github.com/repos/' + username + `/${name}/commits`;
   
-  req.open('GET', urc);
+  req.open('GET', url);
   req.send();
 }
 
