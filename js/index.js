@@ -34,12 +34,13 @@ function displayRepositories(){
 }
 
 function getCommits(el){
+  const username = document.getElementById("username").value;
   const name = el.dataset.repo;
   const req = new XMLHttpRequest();
   
   req.addEventListener('load', displayCommits);
   
-  const url = `https://api.github.com/repos/;
+  const url = `https://api.github.com/repos/${username}/${name}/commits`;
   
   req.open('GET', url);
   req.send();
