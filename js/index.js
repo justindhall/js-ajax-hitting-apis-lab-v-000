@@ -55,5 +55,13 @@ function displayCommits(){
 }
 
 function getBranches(el) {
+  const name = el.dataset.repo;
+  const req = new XMLHttpRequest();
   
+  req.addEventListener('load', displayCommits);
+  
+  const url = `https://api.github.com/users/${username}/commits`;
+  
+  req.open('GET', url);
+  req.send();
 }
