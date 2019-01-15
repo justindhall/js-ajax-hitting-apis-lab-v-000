@@ -12,10 +12,10 @@ function getRepositories(){
   req.addEventListener('load', displayRepositories);
   
   //abstracted link to url
-  const url = `https://api.github.com/users/${username}/repos`
+  const urr = url + '/repos'
   
   //open with abstracted url
-  req.open('GET', url)
+  req.open('GET', urr)
   
   //send request 
   req.send()
