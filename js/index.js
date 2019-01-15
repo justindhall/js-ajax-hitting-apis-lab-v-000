@@ -67,7 +67,7 @@ function getBranches(el) {
   
   req.addEventListener('load', displayCommits);
   
-  const url = `https://api.github.com/users/${username}/commits`;
+  const url = `https://api.github.com/repos/${username}/${name}/branches`;
   
   req.open('GET', url);
   req.send();
